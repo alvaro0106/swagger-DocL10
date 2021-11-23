@@ -1,0 +1,1278 @@
+swagger: "2.0"
+info:
+  title: "Lion 10 Fhir Documentation"
+  description: "Fhir documentation for future referencens and updates in the service."
+  version: "1.2.0"
+  termsOfService: "http://lion10.com"
+  contact:
+    name: "Jessica Murillo"
+    url: "https://lion10.com/home"
+    email: "jessica@lion10.com"
+  
+host: "lion10.com"
+tags:
+- name: "Fhir"
+  description: "Schemas and endpoints documentation."
+schemes:
+- "https"
+- "http"
+#
+# Paths Definition
+#
+paths:
+  
+# -----------------------------------------------------------------
+  /binary/:
+          
+    post:
+      tags:
+      - "Fhir"
+      summary: "controller createBinary called, Post Bundle"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "objectID"
+      #   description: "Bundle ID that needs to be update"
+      #   required: true
+      - in: "body"
+        name: "body"
+        description: "Bundle object that needs to be update"
+        required: true
+        schema:
+          $ref: "#/definitions/Bundle"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid input | Data not found"
+          
+    put:
+      tags:
+      - "Fhir"
+      summary: "Update Bundle"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+    #  - in: "query"
+    #     type: "string"
+    #     name: "emrID"
+    #     description: "Bundle ID that needs to be insert"
+    #     required: true
+      - in: "body"
+        name: "body"
+        description: "Bundle object that needs to be insert"
+        required: true
+        schema:
+          $ref: "#/definitions/Bundle"
+      responses:
+        "200":
+          description: "OK" 
+        "400":
+          description: "Invalid input | Data not found"
+          
+    delete:
+      tags:
+      - "Fhir"
+      summary: "Delete Bundle"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "emrID"
+      #   description: "Bundle ID that needs to be deleted"
+      #   required: true
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid exeption | Data not found"
+
+# -----------------------------------------------------------------
+  # /operationoutcome/:id:
+  #   get:
+  #     tags:
+  #     - "Fhir"
+  #     summary: "Get Operation Outcome"
+  #     consumes:
+  #     - "application/json"
+  #     produces:
+  #     - "application/json"
+  #     parameters:
+  #     - in: "query"
+  #       type: "string"
+  #       name: "emrID"
+  #       description: "Operation Outcome ID that needs to be get"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "OK"
+  #         schema: 
+  #               $ref: "#/definitions/Operation-Outcome"
+  #       "400":
+  #         description: "Invalid input | Data not found"
+          
+    post:
+      tags:
+      - "Fhir"
+      summary: "Post Operation Outcome"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "objectID"
+      #   description: "Operation Outcome ID that needs to be update"
+      #   required: true
+      - in: "body"
+        name: "body"
+        description: "Operation Outcome object that needs to be update"
+        required: true
+        schema:
+          $ref: "#/definitions/Operation-Outcome"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid input | Data not found"
+          
+    put:
+      tags:
+      - "Fhir"
+      summary: "Update Operation Outcome"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "emrID"
+      #   description: "Operation Outcome ID that needs to be insert"
+      #   required: true
+      - in: "body"
+        name: "body"
+        description: "Operation Outcome object that needs to be insert"
+        required: true
+        schema:
+          $ref: "#/definitions/Operation-Outcome"
+      responses:
+        "200":
+          description: "OK" 
+        "400":
+          description: "Invalid input | Data not found"
+          
+    delete:
+      tags:
+      - "Fhir"
+      summary: "Delete Operation Outcome"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "emrID"
+      #   description: "Operation Outcome ID that needs to be deleted"
+      #   required: true
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid exeption | Data not found"
+
+# -----------------------------------------------------------------
+  # /parameters/:id:
+  #   get:
+  #     tags:
+  #     - "Fhir"
+  #     summary: "Get Parameters"
+  #     consumes:
+  #     - "application/json"
+  #     produces:
+  #     - "application/json"
+  #     parameters:
+  #      - in: "query"
+  #        type: "string"
+  #        name: "emrID"
+  #        description: "Parameters ID that needs to be get"
+  #        required: true
+  #     responses:
+  #       "200":
+  #         description: "OK"
+  #         schema: 
+  #               $ref: "#/definitions/Parameters"
+  #       "400":
+  #         description: "Invalid input | Data not found"
+          
+    post:
+      tags:
+      - "Fhir"
+      summary: "Post Parameters"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "objectID"
+      #   description: "Parameters ID that needs to be update"
+      #   required: true
+      - in: "body"
+        name: "body"
+        description: "Parameters object that needs to be update"
+        required: true
+        schema:
+          $ref: "#/definitions/Parameters"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid input | Data not found"
+          
+    put:
+      tags:
+      - "Fhir"
+      summary: "Update Parameters"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "emrID"
+      #   description: "Parameters ID that needs to be insert"
+      #   required: true
+      - in: "body"
+        name: "body"
+        description: "Parameters object that needs to be insert"
+        required: true
+        schema:
+          $ref: "#/definitions/Parameters"
+      responses:
+        "200":
+          description: "OK" 
+        "400":
+          description: "Invalid input | Data not found"
+          
+    delete:
+      tags:
+      - "Fhir"
+      summary: "Delete Parameters"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      # - in: "query"
+      #   type: "string"
+      #   name: "emrID"
+      #   description: "Parameters ID that needs to be deleted"
+      #   required: true
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid exeption | Data not found"
+
+#
+# Schemas Definition
+#
+definitions:
+# -----------------------------------------------------------------
+#   Capability-Statement:
+#     type: "object"
+#     properties:
+#       resourceType:
+#         type: "string"
+#       emrID:
+#         type: "number"
+#       createdDate:
+#         type: "string"
+#         format: "date-time"
+#       url:
+#         type: "string"
+#       version:
+#         type: "string"
+#       name:
+#         type: "string"
+#       title:
+#         type: "string"
+#       status:
+#         type: "string"
+#       experimental:
+#         type: "boolean"
+#       date:
+#         type: "string"
+#         format: "date-time"
+#       publisher:
+#         type: "string"
+#       contact:
+#         type: "string"
+#       description:
+#         type: "string"
+#       useContext:
+#         type: "array"
+#         items:
+#           type: "string"
+#       jurisdiction:
+#         type: "array"
+#         items:
+#           type: "string"
+#       porpose:
+#         type: "string"
+#       copyright:
+#         type: "string"
+#       kind:
+#         type: "string"
+#       instantiates:
+#         type: "array"
+#         items:
+#           type: "string"
+#       import:
+#         type: "string"
+#         items:
+#           type: "string"
+#       software:
+#         type: "object"
+#       implementation:
+#         type: "object"
+#       fhirVersion:
+#         type: "string"
+#       format:
+#         type: "array"
+#         items: 
+#           type: "string"
+#       patchFormat:
+#         type: "array"
+#         items:
+#           type: "string"
+#       rest:
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             mode:
+#               type: "string" 
+#             documentation:
+#               type: "string"
+#             security:
+#               type: "object"
+#             resource:
+#               type: "array"
+#               items:
+#                 type: "object"
+#                 properties:
+#                   type:
+#                     type: "string"
+#                   profile:
+#                     type: "string"
+#                   supportedProfile:
+#                     type: "string"
+#                   documentation:
+#                     type: "string"
+#                   interaction:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#                   versioning:
+#                     type: "string"
+#                   readHistory:
+#                     type: "boolean"
+#                   updateCreate:
+#                     type: "boolean"
+#                   conditionalCreate:
+#                     type: "boolean"
+#                   conditionalRaed:
+#                     type: "boolean"
+#                   conditionalUpdate:
+#                     type: "boolean"
+#                   conditionalDelete:
+#                     type: "boolean"
+#                   referencePolicy:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#                   searchInclude:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#                   searchRevInclude:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#                   searchParam:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#                   operation:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#             interaction:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             searchParam:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             operation:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             compartemnt:
+#               type: "array"
+#               items:
+#                 type: "string"
+#       messaging:
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             endpoint:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             reliableCcahe:
+#               type: "string"
+#             documentation:
+#               type: "string"
+#             supportedMessage:
+#               type: "object"
+#       meta:
+#         type: "object"
+#         properties:
+#           lastUpdated:
+#             type: "string"
+#       language:
+#         type: "string"
+#     xml:
+#       name: "Capability"
+# # -----------------------------------------------------------------
+#   Structure-Definition:
+#     type: "object"
+#     properties:
+#       resourceType:
+#         type: "string"
+#       emrID: 
+#         type: "number"
+#       createdDate: 
+#         type: "string"
+#         format: "date-time"
+#       url:
+#         type: "string"
+#       identifier:
+#         type: "array"
+#         items:
+#           type: "string"
+#       version:
+#         type: "string"
+#       name:
+#         type: "string"
+#       titel:
+#         type: "string"
+#       status:
+#         type: "string"
+#       experimental:
+#         type: "boolean"
+#       date:
+#         type: "string"
+#         format: "date-time"
+#       publisher:
+#         type: "string"
+#       contact:
+#         type: "array"
+#         items: 
+#           type: "string"
+#       description:
+#         type: "string"
+#       useContext:
+#         type: "array"
+#         items:
+#           type: "string"
+#       jurisdiction:
+#         type: "array"
+#         items:
+#           type: "string"
+#       porpose:
+#         type: "string"
+#       copyright:
+#         type: "string"
+#       keyword:
+#         type: "array"
+#         items:
+#           type: "string"
+#       fhirVersion:
+#         type: "string"
+#       mapping: 
+#         type: "array"
+#         items: 
+#           type: "object"
+#           properties:
+#             identity:
+#               type: "integer"
+#             uri:
+#               type: "string"
+#             name:
+#               type: "string"
+#             comment:
+#               type: "string"
+#       kind:
+#         type: "string"
+#       abstract:
+#         type: "boolean"
+#       context:
+#         type: "array"
+#         items: 
+#           type: "object"
+#           properties:
+#             type:
+#               type: "string"
+#             expression:
+#               type: "string"
+#       contextInavriant:
+#         type: "array"
+#         items:
+#           type: "string"
+#       type:
+#         type: "string"
+#       baseDefinition:
+#         type: "object"
+#       derivation:
+#         type: "string"
+#       snapshot:
+#         type: "object"
+#         properties:
+#           element:
+#             type: "array"
+#             items:
+#               type: "string"
+#       differenctial:
+#         type: "object"
+#         properties:
+#           element:
+#             type: "array"
+#             items:
+#               type: "string"
+#       meta:
+#         type: "object"
+#         properties:
+#           lastUpdated:
+#             type: "string"
+#       language:
+#         type: "string" 
+#     xml:
+#       name: "Structure"
+# # -----------------------------------------------------------------
+#   Operation-Definition:
+#     type: "object"
+#     properties:
+#       resourceType:
+#         type: "string"
+#       emrID:
+#         type: "number"
+#       createdDate:
+#         type: "string"
+#         format: "date-time"
+#       url:
+#         type: "string"
+#       version:
+#         type: "string"
+#       name:
+#         type: "string"
+#       title:
+#         type: "string"
+#       status:
+#         type: "string"
+#       kind:
+#         type: "string"
+#       experimental:
+#         type: "boolean"
+#       date:
+#         type: "string"
+#         format: "date-time"
+#       publisher:
+#         type: "string"
+#       contact:
+#         type: "array"
+#         items:
+#           type: "string"
+#       description:
+#         type: "string"
+#       useContext:
+#         type: "array"
+#         items: 
+#           type: "string"
+#       jurisdiction:
+#         type: "array"
+#         items:
+#           type: "string"
+#       porpose:
+#         type: "string"
+#       affectsState:
+#         type: "string"
+#       code:
+#         type: "string"
+#       comment:
+#         type: "string"
+#       base:
+#         type: "object"
+#       resource:
+#         type: "array"
+#         items: 
+#           type: "string"
+#       system:
+#         type: "boolean"
+#       type:
+#         type: "boolean"
+#       instance:
+#         type: "boolean"
+#       inputProfile:
+#         type: "object"
+#       outputProfile:
+#         type: "object"
+#       parameter:
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             name: 
+#               type: "string"
+#             use: 
+#               type: "string"
+#             min: 
+#               type: "number"
+#             max: 
+#               type: "number"
+#             documentation: 
+#               type: "string"
+#             type: 
+#               type: "string"
+#             targetProfile: 
+#               type: "array"
+#               items:
+#                 type: "string"
+#             searchType:
+#               type: "string"
+#             binding: 
+#               type: "object"
+#             referencedFrom: 
+#               type: "array"
+#               items:
+#                 type: "string"
+#             part: 
+#               type: "array"
+#               items:
+#                 type: "string"
+#       overload:
+#         type: "array"
+#         items:
+#           type: "string"
+#       meta:
+#         type: "object"
+#         properties:
+#           lastUpdated: 
+#             type: "string"
+#       language:
+#         type: "string"
+#     xml:
+#       name: "Operation"
+# # -----------------------------------------------------------------
+#   Code-System:
+#     type: "object"
+#     properties:
+#       resourceType:
+#         type: "string"
+#       emrID:
+#         type: "number"
+#       createdDate:
+#         type: "string"
+#         format: "date-time"
+#       url:
+#         type: "string"
+#       version:
+#         type: "string"
+#       name:
+#         type: "string"
+#       title:
+#         type: "string"
+#       status:
+#         type: "string"
+#       kind:
+#         type: "string"
+#       experimental:
+#         type: "boolean"
+#       date:
+#         type: "string"
+#         format: "date-time"
+#       publisher:
+#         type: "string"
+#       contact:
+#         type: "array"
+#         items:
+#           type: "string"
+#       description:
+#         type: "string"
+#       useContext:
+#         type: "array"
+#         items: 
+#           type: "string"
+#       jurisdiction:
+#         type: "array"
+#         items:
+#           type: "string"
+#       porpose:
+#         type: "string"
+#       copyright:
+#         type: "string"
+#       kindcaseSensitive:
+#         type: "string"
+#       compositional:
+#         type: "object"
+#       versionNeeded:
+#         type: "object"
+#       supplements:
+#         type: "string"
+#       count:
+#         type: "array"
+#         items:
+#           type: "string"  
+#       filter:
+#         type: "array"
+#         items: 
+#           type: "object"
+#           properties:
+#             code:
+#               type: "string"
+#             description:
+#               type: "string"
+#             operation:
+#               type: "array"
+#               items: 
+#                 type: "string"
+#             # value:
+#             #   type: "string"
+#       property:
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             code:
+#               type: "string"
+#             uri: 
+#               type: "string"
+#             description:
+#               type: "string"
+#             type: 
+#               type: "string"
+#       concept:
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             code:
+#               type: "string"
+#             display:
+#               type: "string"
+#             definition:
+#               type: "string"
+#             designation:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             property:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             concept:
+#               type: "array"
+#               items:
+#                 type: "string"
+#       meta:
+#         type: "object"
+#         properties:
+#           lastUpdated: 
+#             type: "string"
+#       language:
+#         type: "string"
+#     xml:
+#       name: "Code"
+# # -----------------------------------------------------------------
+#   Value-Set:
+#     type: "object"
+#     properties:
+#       resourceType:
+#         type: "string"
+#       emrID:
+#         type: "number"
+#       createdDate:
+#         type: "string"
+#         format: "date-time"
+#       url:
+#         type: "string"
+#       version:
+#         type: "string"
+#       name:
+#         type: "string"
+#       title:
+#         type: "string"
+#       status:
+#         type: "string"
+#       kind:
+#         type: "string"
+#       experimental:
+#         type: "boolean"
+#       date:
+#         type: "string"
+#         format: "date-time"
+#       publisher:
+#         type: "string"
+#       contact:
+#         type: "array"
+#         items:
+#           type: "string"
+#       description:
+#         type: "string"
+#       useContext:
+#         type: "array"
+#         items: 
+#           type: "string"
+#       jurisdiction:
+#         type: "array"
+#         items:
+#           type: "string"
+#       inmutable:
+#         type: "boolean"
+#       porpose:
+#         type: "string"
+#       copyright:
+#         type: "string"
+#       compose: 
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             lockedDate:
+#               type: "string"
+#               format: "date-time"
+#             inactive:
+#               type: "boolean"
+#             include:
+#               type: "array"
+#               items:
+#                 type: "object"
+#                 properties:
+#                   system:
+#                     type: "string"
+#                   version: 
+#                     type: "string"
+#                   concept:
+#                     type: "array"
+#                     items:
+#                       type: "object"
+#                       properties:
+#                         code: 
+#                           type: "string"
+#                         display:
+#                           type: "string"
+#                         designation:
+#                           type: "array"
+#                           items:
+#                             type: "object"
+#                             properties:
+#                               language: 
+#                                 type: "string"
+#                               use:
+#                                 type: "object"
+#                               value:
+#                                 type: "string"
+#             filter:
+#               type: "array"
+#               items:
+#                 type: "object"
+#                 properties:
+#                   property:
+#                     type: "string"
+#                   op:
+#                     type: "string"
+#                   value:
+#                     type: "string"
+#             valueSet:
+#               type: "array"
+#               items:
+#                 type: "string"
+#             exclude:
+#               type: "array"
+#               items:
+#                 type: "string"
+#       expansion:
+#         type: "array"
+#         items:
+#           type: "object"
+#           properties:
+#             identifier:
+#               type: "string"
+#             timestamp:
+#               type: "string"
+#               format: "date-time"
+#             total:
+#               type: "number"
+#             offset:
+#               type: "number"
+#             parameter:
+#               type: "array"
+#               items:
+#                 type: "object"
+#                 properties:
+#                   name:
+#                     type: "string"
+#                   valuestring:
+#                     type: "string"
+#                   valueBoolean:
+#                     type: "boolean"
+#                   valueInteger:
+#                     type: "number"
+#                   valueDecimal:
+#                     type: "number"
+#                   valueUri: 
+#                     type: "string"
+#                   valueCode: 
+#                     type: "string"
+#                   valueDateTime:
+#                     type: "string"
+#                     format: "date-time"
+#             contains:
+#               type: "array"
+#               items:
+#                 type: "object"
+#                 properties:
+#                   system:
+#                     type: "string"
+#                   abstract: 
+#                     type: "boolean"
+#                   inactive:
+#                     type: "boolean"
+#                   version:
+#                     type: "string"
+#                   code: 
+#                     type: "string"
+#                   display:
+#                     type: "string"
+#                   designation:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#                   contains:
+#                     type: "array"
+#                     items:
+#                       type: "string"
+#       meta:
+#         type: "object"
+#         properties:
+#           lastUpdated: 
+#             type: "string"
+#       language:
+#         type: "string"
+#     xml:
+#       name: "Value"
+# -----------------------------------------------------------------
+  Binary:
+    type: "object"
+    properties:
+      resourceType:
+        type: "string"
+      emrID:
+        type: "number"
+      createdDate:
+        type: "string"
+        format: "date-time"
+      contentType:
+        type: "string"
+      securityContext:
+        type: "object"
+        properties:
+          reference:
+            type: "string"
+      data:
+        type: "string"
+      meta:
+        type: "object"
+        properties:
+          lastUpdated: 
+            type: "string"
+      language:
+        type: "string"
+    xml:
+      name: "Binary"
+# -----------------------------------------------------------------
+  Bundle:
+    type: "object"
+    properties:
+      resourceType:
+        type: "string"
+      emrID:
+        type: "number"
+      createdDate:
+        type: "string"
+        format: "date-time"
+      link_data:
+        type: "array"
+        items:
+          type: "object"
+          properties:  
+            relation:
+              type: "string"
+            url:
+              type: "string"
+      entry:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            link:     
+              type: "array"
+              items:
+                type: "string"
+            fullUrl:  
+              type: "string" 
+            resource: 
+              type: "string"
+            search:  
+              type: "object"
+            request:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  method:
+                    type: "string"
+                  url:
+                    type: "string"
+                  ifNoneMatch:
+                    type: "string"
+                  ifModifiedSince:
+                    type: "string"
+                  ifMatch:
+                    type: "string"
+                  ifNoneExist:
+                    type: "string"
+            response:
+              type: "array"
+              items:
+                type: "object"
+                properties:                
+                  status: 
+                    type: "array"
+                    items:
+                      type: "string"
+                  location:
+                    type: "string"
+                  etag:         
+                    type: "string"
+                  lastMofified: 
+                    type: "string"
+                  outcome:      
+                    type: "string"
+      meta:
+        type: "object"
+        properties:
+          lastUpdated:
+            type: "string"
+      language:
+        type: "string"
+    xml:
+      name: "Order"
+# -----------------------------------------------------------------
+  Operation-Outcome:
+    type: "object"
+    properties:
+      resourceType:
+        type: "string"
+      emrID:
+        type: "number"
+      createdDate:
+        type: "string"
+        format: "date-time"
+      problem:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            severity:    
+              type: "string"
+            code:       
+              type: "string"
+            details: 
+              type: "object"
+            diagnostics: 
+              type: "string"
+            location:  
+              type: "array"
+              items:
+                type: "string"
+            expresión:   
+              type: "array"
+              items:
+                type: "string"
+      meta:
+        type: "object"
+        properties:
+          lastUpdated:
+            type: "string"
+      language:
+        type: "string"
+    xml:
+      name: "Order"
+# -----------------------------------------------------------------
+  Parameters:
+    type: "object"
+    properties:
+      resourceType:
+        type: "string"
+      emrID:
+        type: "number"
+      createdDate:
+        type: "string"
+        format: "date-time"
+      parameters:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            valueBase64Binary: 
+              type: "string"
+            valueBoolean:
+              type: "boolean"
+            valueCanonical:
+              type: "string"
+            valueDate: 
+              type: "string"
+              format: "date-time"
+            valueDateTime:
+              type: "string"
+              format: "date-time"
+            valueDecimal:
+              type: "number"
+            valueId:
+              type: "string"
+            valueInstant:
+              type: "string"
+            valueInteger:
+              type: "number"
+            valueMarkdown:
+              type: "string"
+            valueOid: 
+              type: "string"
+            valuePositiveInt:
+              type: "number"
+            valuestring:
+              type: "string"
+            valueTime:
+              type: "string"
+              format: "date-time"
+            valueUnsignedInt:
+              type: "number"
+            valueUri:
+              type: "string"
+            valueUrl:
+              type: "string"
+            valueUuid:
+              type: "string"
+            valueAddress:
+              type: "string"
+            valueAge:
+              type: "object"
+            valueAnnotation:
+              type: "object"
+            valueAttachment:
+              type: "object"
+            valueCodeableConcept:
+              type: 'object'
+            valueCoding:
+              type: "object"
+            valueContactPoint:
+              type: "object"
+            valueCount:
+              type: "object"
+            valueDistance:
+              type: "object"
+            valueDuration:
+              type: "object"
+            valueHumanName:
+              type: "object"
+            valueIdentifier:
+              type: "object"
+            valueMoney:
+              type: "object"
+            valuePeriod:
+              type: "object"
+            valueQuantity:
+              type: "object"
+            valueRange:
+              type: "object"
+            valueRatio:
+              type: "object"
+            valueReference:
+              type: "object"
+            valueSampledData:
+              type: "object"
+            valueSignature:
+              type: "object"
+            valueTiming:
+              type: "object"
+            valueContactDetail:
+              type: "object"
+            valueContributor:
+              type: "object"
+            valueDataRequirement:
+              type: "object"
+            valueExpression:
+              type: "object"
+            valueParameterDefinition:
+              type: "object"
+            valueRelatedArtifact:
+              type: "object"
+            valueTriggerDefinition:
+              type: "object"
+            valueUsageContext:
+              type: "object"
+            valueDosage:
+              type: "object"
+            valueMeta:
+              type: "object"
+            resource:
+              type: "object"
+            part:
+              type: "array"
+              items:
+                type: "string"
+      meta:
+        type: "object"
+        properties:
+          lastUpdated:
+            type: "string"
+      language:
+        type: "string"
+    xml:
+      name: "Order"
+
+#
+# Documentations
+#
+externalDocs:
+  description: "Find out more about Lion10"
+  url: "http://lion10.com"
